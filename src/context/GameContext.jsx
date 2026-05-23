@@ -59,7 +59,18 @@ export const GameProvider = ({ children }) => {
     const saved = localStorage.getItem('mindi_user');
     return saved ? JSON.parse(saved) : null;
   });
-  const [currentRoomCode, setCurrentRoomCode] = useState(null);
+  const [currentRoomCode, setCurrentRoomCodeState] = useState(() => {
+    return localStorage.getItem('mindi_room_code') || null;
+  });
+
+  const setCurrentRoomCode = (code) => {
+    if (code) {
+      localStorage.setItem('mindi_room_code', code);
+    } else {
+      localStorage.removeItem('mindi_room_code');
+    }
+    setCurrentRoomCodeState(code);
+  };
   const [currentRoomData, setCurrentRoomData] = useState(null);
 
   // Real-time listener for the active room
