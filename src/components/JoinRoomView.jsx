@@ -24,9 +24,16 @@ export default function JoinRoomView() {
         );
         const querySnapshot = await getDocs(q);
         const available = [];
+        const tenMinutes = 10 * 60 * 1000;
+        const now = Date.now();
+        
         querySnapshot.forEach((doc) => {
           const r = doc.data();
-          if (!r.settings) return;
+          if (!r.settings || !r.settings.createdAt) return;
+          
+          const age = now - r.settings.createdAt;
+          if (age > tenMinutes) return; // Hide rooms older than 10 minutes
+          
           const currentPlayers = Object.keys(r.players || {}).length;
           if (currentPlayers < r.settings.playerCount) {
              available.push(r);
