@@ -212,7 +212,7 @@ export default function GameTable() {
         )}
 
         {isPickingDealer && room.dealerCards && room.dealerCards[player.id] && (
-          <div style={{ marginTop: '8px', transform: 'scale(0.7)' }}>
+          <div className="dealer-card-anim" style={{ marginTop: '8px', transform: 'scale(0.7)', animationDelay: `${(relIdx) * 0.5}s` }}>
              <Card suit={room.dealerCards[player.id].suit} value={room.dealerCards[player.id].value} isRed={room.dealerCards[player.id].isRed} />
           </div>
         )}
@@ -333,7 +333,7 @@ export default function GameTable() {
             
             {/* Show my open dealer card */}
             {room.dealerCards && room.dealerCards[currentUser.id] && (
-              <div style={{ transform: 'scale(0.9)', marginBottom: '20px' }}>
+              <div className="dealer-card-anim" style={{ transform: 'scale(0.9)', marginBottom: '20px', animationDelay: '0s' }}>
                 <Card suit={room.dealerCards[currentUser.id].suit} value={room.dealerCards[currentUser.id].value} isRed={room.dealerCards[currentUser.id].isRed} />
               </div>
             )}

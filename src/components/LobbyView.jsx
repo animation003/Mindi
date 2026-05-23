@@ -32,7 +32,7 @@ export default function LobbyView() {
   const requiredPerTeam = maxPlayers / 2;
   const isFull = players.length === maxPlayers;
   const allAssigned = teamA.length === requiredPerTeam && teamB.length === requiredPerTeam;
-  const canStart = true; // TEMPORARILY TRUE FOR DEBUGGING
+  const canStart = allAssigned;
 
   const handleAssign = (playerId, team) => {
     if (!isHost) return;
