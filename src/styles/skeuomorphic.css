@@ -1,0 +1,113 @@
+/* Skeuomorphic Pop UI Elements */
+
+.btn-3d {
+  background: linear-gradient(145deg, #e60000, #990000);
+  color: #fff;
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 1.3rem;
+  padding: 16px 32px;
+  border: 2px solid #ff4d4d;
+  border-radius: 30px;
+  box-shadow: var(--shadow-3d-button), inset 0 2px 8px rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: all 0.1s ease;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.btn-3d::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 45%;
+  background: linear-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0));
+  border-radius: 28px 28px 0 0;
+}
+
+.btn-3d:active {
+  transform: translateY(8px);
+  box-shadow: 0 0 0 #5c0000, 0 2px 4px rgba(0,0,0,0.7), inset 0 2px 8px rgba(255,255,255,0.6);
+}
+
+.btn-3d.secondary {
+  background: linear-gradient(145deg, #444, #1a1a1a);
+  border-color: #666;
+  box-shadow: 0 8px 0 #0a0a0a, 0 15px 20px rgba(0,0,0,0.7), inset 0 2px 8px rgba(255,255,255,0.3);
+}
+
+.btn-3d.secondary::after {
+  background: linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0));
+}
+
+.glass-panel {
+  background: linear-gradient(135deg, rgba(80, 0, 0, 0.7), rgba(40, 0, 0, 0.85));
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--panel-glass-border);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: var(--shadow-soft), var(--shadow-inner), 0 0 30px rgba(255,0,0,0.15);
+}
+
+/* Premium Card */
+.playing-card {
+  width: var(--card-width);
+  height: var(--card-height);
+  background-color: white;
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3), inset 0 0 2px rgba(0,0,0,0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6px;
+  user-select: none;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.playing-card.back {
+  background: repeating-linear-gradient(
+    45deg,
+    #112,
+    #112 10px,
+    #224 10px,
+    #224 20px
+  );
+  border: 4px solid white;
+}
+
+.playing-card.red {
+  color: #d80000;
+}
+
+.playing-card.black {
+  color: #000000;
+}
+
+.card-value-top {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.card-suit-center {
+  font-size: 2.5rem;
+  align-self: center;
+}
+
+.card-value-bottom {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: rotate(180deg);
+  line-height: 1;
+}

@@ -1,0 +1,47 @@
+:root {
+  /* Casino Colors */
+  --bg-dark-red: #3a0000;
+  --bg-table-felt: #5a0000;
+  --bg-midnight-black: #050000;
+  --bg-dark-maroon: #250000;
+
+  /* Accents */
+  --accent-gold-light: #ffd700;
+  --accent-gold-dark: #b8860b;
+  --accent-rich-red: #ff2a2a;
+  --accent-bright-red: #ff4444;
+  --accent-white-glow: #ffffff;
+  
+  /* UI Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --panel-glass: rgba(60, 0, 0, 0.65);
+  --panel-glass-border: rgba(255, 215, 0, 0.4);
+
+  /* Typography */
+  --font-main: 'Outfit', sans-serif;
+  --font-headings: 'Playfair Display', serif;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 20px rgba(255, 42, 42, 0.5);
+  --shadow-gold-glow: 0 0 20px rgba(255, 215, 0, 0.5);
+  --shadow-inner: inset 0 2px 4px rgba(255, 255, 255, 0.15);
+  --shadow-3d-button: 0 8px 0 #5c0000, 0 15px 20px rgba(0,0,0,0.7);
+  
+  /* Cards */
+  --card-width: 70px;
+  --card-height: 100px;
+  --card-radius: 8px;
+  
+  /* Layout */
+  --safe-area-inset-top: env(safe-area-inset-top, 0px);
+  --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --card-width: 100px;
+    --card-height: 140px;
+  }
+}

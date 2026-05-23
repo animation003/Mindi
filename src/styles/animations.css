@@ -1,0 +1,55 @@
+/* Animations */
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slideInUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes dealCard {
+  from { 
+    opacity: 0; 
+    transform: translate(-50vw, -50vh) rotate(-180deg) scale(0);
+  }
+  to { 
+    opacity: 1; 
+    transform: translate(0, 0) rotate(0) scale(1);
+  }
+}
+
+.animate-deal {
+  animation: dealCard 0.4s ease-out forwards;
+}
+
+@keyframes playCard {
+  from { transform: translateY(50px) scale(1.2); z-index: 100; }
+  to { transform: translateY(0) scale(1); z-index: 10; }
+}
+
+.animate-play {
+  animation: playCard 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes winnerGlow {
+  0% { box-shadow: 0 0 10px var(--accent-gold-light); }
+  50% { box-shadow: 0 0 30px var(--accent-gold-light), 0 0 10px var(--accent-bright-yellow); }
+  100% { box-shadow: 0 0 10px var(--accent-gold-light); }
+}
+
+.winner-glow {
+  animation: winnerGlow 1.5s ease-in-out infinite;
+  border-color: var(--accent-gold-light) !important;
+}
